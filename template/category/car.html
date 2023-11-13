@@ -1,0 +1,97 @@
+{%  extends 'base.html' %}
+{% block title %}Admin|Category{% endblock %}
+{% block start %}Car  {% endblock %}
+{% block content %}
+    {% load bootstrap4 %}
+ <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Cars</h3>
+
+                <div class="card-tools">
+
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Status</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for foo in brand_all %}
+
+
+
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ foo.name }}</td>
+                        <td>{{ foo.brand }}</td>
+                        <td>{{ foo.raqam }}</td>
+
+                      <td><span class="badge badge-success">Shipped</span></td>
+
+                    </tr>
+                       {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+
+</div>
+
+
+ <div class="card">
+                  <div class="card-header d-flex justify-content-between">
+                     <div class="header-title">
+                        <h4 class="card-title">Cars</h4>
+                     </div>
+
+                  </div>
+                  <div class="card-body">
+
+                     <form method="post" enctype="multipart/form-data">
+                         {% csrf_token %}
+                        <div class="row">
+                           <div class="col">
+                              {%  bootstrap_field form.name %}
+                           </div>
+                           <div class="col">
+                             {% bootstrap_field form.brand %}
+                           </div>
+                            <div class="col">
+                             {% bootstrap_field form.raqam %}
+                           </div>
+                            <div class="col">
+                             {% bootstrap_field form.xk %}
+                           </div>
+                            <div class="col">
+                             {% bootstrap_field form.price %}
+                           </div>
+                            <div class="col">
+                             {% bootstrap_field form.status %}
+                           </div>
+                            <div class="col">
+                             {% bootstrap_field form.yili %}
+                           </div>
+                             <div class="col">
+                             {% bootstrap_field form.photos %}
+                           </div>
+                        </div>
+                          <button type="submit" class="btn btn-primary">Saqlash</button>
+    <a href="{% url 'home' %}" class="btn btn-danger">Bekor</a>
+                     </form>
+                  </div>
+               </div>
+
+
+</div>
+
+{% endblock %}

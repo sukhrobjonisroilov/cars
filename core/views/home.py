@@ -3,4 +3,4 @@ from django.shortcuts import  render
 
 @login_required(login_url='login')
 def home(request):
-    return render(request,'base.html')
+    return render(request,'home/index.html')
