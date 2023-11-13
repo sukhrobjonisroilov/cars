@@ -5,6 +5,7 @@ from core.models.auth import User
 
 from django.shortcuts import redirect,render
 def sing_in(request):
+
     if request.POST:
         password = request.POST.get('password')
         phone = request.POST.get('phone')

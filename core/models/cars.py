@@ -5,6 +5,10 @@ class Brand(models.Model):
     name = models.CharField(max_length=50)
 
 
+    def __str__(self):
+        return self.name
+
+
 class Car(models.Model):
     name = models.CharField(max_length=250)
     brand = models.ForeignKey(Brand,on_delete=models.CASCADE)
@@ -13,6 +17,10 @@ class Car(models.Model):
     price= models.IntegerField(default=0,verbose_name='kunlik ijara')
     status = models.BooleanField(default=True)
     yili = models.IntegerField(verbose_name='Chiqarilgan yili')
+
+
+    def __str__(self):
+        return self.name
 
 
 
@@ -27,3 +35,5 @@ class Arenda(models.Model):
         ('Plastik','Plastik'),
         ('Bolib tolash','Bolib tolash')
     ])
+    def __str__(self):
+        return f'{self.summa}ga {self.payt_type}'

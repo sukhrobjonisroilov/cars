@@ -1,0 +1,67 @@
+{%  extends 'base.html' %}
+{% block title %}Admin|Category{% endblock %}
+{% block start %}Brendlar  {% endblock %}
+{% block content %}
+    {% load bootstrap4 %}
+ <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Brendlar</h3>
+
+                <div class="card-tools">
+
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Status</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for foo in brand_all %}
+                    
+
+                    
+                    <tr>
+                      <td>1</td>
+                      <td>{{ foo.name }}</td>
+                      <td><span class="badge badge-success">Shipped</span></td>
+
+                    </tr>
+                       {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+
+ <form role="form">
+<div class="card-body">
+  <div class="form-group-3">
+      <label for="exampleInputEmail1">Brend Kiriting</label>
+  {% bootstrap_field form.name %}
+  </div>
+
+
+
+</div>
+<!-- /.card-body -->
+
+<div class="card-footer">
+  <a href="{% url 'ctg' key='brend' status='form' %}" class="btn btn-primary">Saqlash</a>
+    <a href="#" class="btn btn-danger">Bekor</a>
+</div>
+  </form>
+
+
+</div>
+
+{% endblock %}
