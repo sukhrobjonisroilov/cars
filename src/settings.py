@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'bootstrap4',
-    'django.contrib.humanize',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +78,7 @@ WSGI_APPLICATION = 'src.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite31',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -110,9 +109,9 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Tashkent'
 
-USE_I18N = True
+USE_I18N = False
 
-USE_TZ = False
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -120,9 +119,6 @@ USE_TZ = False
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
