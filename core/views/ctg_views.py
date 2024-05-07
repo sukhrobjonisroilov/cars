@@ -1,13 +1,14 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from core.models.cars import Brand
-from core.form.forms import BrendForm
+from core.models.cars import Brand, Car
+from core.form.forms import BrendForm,CarForm
 
 @login_required(login_url='login')
 def ctg_view(request, key, status=None):
     try:
         Model = {
-            'brend': Brand
+            'brend': Brand,
+            'car': Car,
         }[key]
     except:
         redirect('home')
